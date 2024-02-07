@@ -1,0 +1,23 @@
+{
+  "name": "vs-electron-app",
+  "version": "1.0.0",
+  "description": "electron study",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/QuanJinLian/electron-test.git"
+  },
+  "author": "QuanJinlian",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/QuanJinLian/electron-test/issues"
+  },
+  "homepage": "https://github.com/QuanJinLian/electron-test#readme",
+  "devDependencies": {
+    "electron": "^28.2.1"
+  }
+}
