@@ -8,3 +8,4 @@ bin
 *.css.map
 *.scssc
 .DS_Store
+out/
