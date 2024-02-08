@@ -10,11 +10,12 @@ window.addEventListener('DOMContentLoaded', () => {
 })
 
 
-const { contextBridge } = require('electron')
+const { contextBridge ,ipcRenderer } = require('electron')
 
 // preload window 객체에 원하는 데이터 저장하기
 contextBridge.exposeInMainWorld('versions', {
   node: () => process.versions.node,
   chrome: () => process.versions.chrome,
-  electron: () => process.versions.electron 
+  electron: () => process.versions.electron ,
+  ping: () => ipcRenderer.invoke('ping')
 })
