@@ -1,6 +1,8 @@
 module.exports = {
   packagerConfig: {
     asar: true,
+    icon: "./assets/icon.icns",
+    extraResource: './assets/icon.icns'
   },
   rebuildConfig: {},
   makers: [
@@ -23,7 +25,7 @@ module.exports = {
     {
       name: '@electron-forge/maker-dmg',
       config: {
-        icon: "./assets/icons2.icns",
+        icon: "./assets/icon.icns",
         format: 'ULMO',
       }
     }
