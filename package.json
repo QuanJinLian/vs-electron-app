@@ -1,7 +1,7 @@
 {
-  "name": "vs-electron-app",
+  "name": "vs_electron_app",
   "version": "1.0.0",
-  "description": "electron study",
+  "description": "electron_study",
   "main": "main.js",
   "scripts": {
     "start": "electron-forge start",
