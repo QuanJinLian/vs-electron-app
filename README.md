@@ -52,7 +52,7 @@ npm run make
 		+ `icon: "./assets/icon.icns"`
 	+ [MenuBar 아이콘](https://www.electronjs.org/docs/latest/api/native-image) > `Tray` 생성 , `NativeImage` 생성 `BrowserWindow` 에서 설정 
 		+ [Supported Formats](https://www.electronjs.org/docs/latest/api/native-image#supported-formats) 준비 필 (32 * 32 사이즈가 제일 적적한 듯)
-	+ [DMG 파일 타이틀 아이콘 설정](https://github.com/LinusU/node-appdmg) > `forge.config.js` >  `makers` > `config:{icon : "./url"}`
+	+ [DMG 파일 타이틀 아이콘 설정](https://github.com/LinusU/node-appdmg) > `forge.config.js` >  `makers` > `config:{icon : "./url"}`
 + 해당 코드 dmg(arm64)로 패키징 `npm run make`
 	+ 특이 사항1: [**Mac** 에서만 패키징 가능](!https://www.electronforge.io/config/makers/dmg)
 	+ dmg 파일 위치`out/make/vs-electron-app-1.0.0-arm64.dmg`
