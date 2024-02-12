@@ -4,7 +4,7 @@ const path = require('node:path');
 
 
 const createWindow = () => {
-  const _path = path.join(__dirname, '32.png');
+  const _path = path.join(__dirname, './assets/dog32.png');
   const appIcon = new Tray(_path)
   const img =  nativeImage.createFromPath(_path, {width: 16, height: 16})
 
