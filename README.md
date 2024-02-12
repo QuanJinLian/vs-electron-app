@@ -48,19 +48,19 @@ npm run make
 	+ `renderer.js` 에서는 window에 접근해서 통신 할 수 있음 `await window.versions.ping()`
 + Application 아이콘 , MenuBar 아이콘 등 아이콘들 커스텀 설정
 	+  [Application 아이콘](https://electron.github.io/packager/main/)  > `forge.config.js` > `packagerConfig`
-		+  `extraResource: './assets/icon.icns'` 
-		+ `icon: "./assets/icon.icns"`
+		+  `extraResource: './assets/icon'` 
+		+ `icon: ['./assets/icon.icns', './assets/icon.ico', './assets/icon.png']`
 	+ [MenuBar 아이콘](https://www.electronjs.org/docs/latest/api/native-image) > `Tray` 생성 , `NativeImage` 생성 `BrowserWindow` 에서 설정 
 		+ [Supported Formats](https://www.electronjs.org/docs/latest/api/native-image#supported-formats) 준비 필 (32 * 32 사이즈가 제일 적적한 듯)
 	+ [DMG 파일 타이틀 아이콘 설정](https://github.com/LinusU/node-appdmg) > `forge.config.js` >  `makers` > `config:{icon : "./url"}`
-+ 해당 코드 dmg(arm64)로 패키징 `npm run make`
-	+ 특이 사항1: [**Mac** 에서만 패키징 가능](!https://www.electronforge.io/config/makers/dmg)
++ 해당 코드 dmg(arm64)로 패키징 : Mac에서 `npm run make`
+	+ [특이 사항1](https://www.electronforge.io/config/makers/dmg): **Mac** 에서만 패키징 가능  
 	+ dmg 파일 위치`out/make/vs-electron-app-1.0.0-arm64.dmg`
-+ 해당 코드 exe 로 패키징 `npm run make`
-	+ 특이 사항1: [**window**  혹은 **linux** 에서만 패키징 가능](!https://www.electronforge.io/config/makers/squirrel.windows)
-	+ 특이 사항2: [패키지 이름, 설명 등에 `-` 혹은 띄어쓰기 들어가면 에러남](!https://github.com/electron/windows-installer/issues/167)
-	 + [window > 시스템 > 고급 설정 > Path > `%SystemRoot%\system32\WindowsPowerShell\v1.0` 추가하기](!https://stackoverflow.com/questions/57750620/how-to-fix-error-spawnsync-powershell-exe-enoent)
-	 + 특이 사항3: [코드 경로에 영어가 아닌 다른 문자가 없어야 함 `ex) C:/다운로드/code/...`](!https://github.com/electron/windows-installer/issues/167)
++ 해당 코드 exe 로 패키징 : Window에서 `npm run make`
+	+ [특이 사항1](https://www.electronforge.io/config/makers/squirrel.windows): **window**  혹은 **linux** 에서만 패키징 가능  
+	+ [특이 사항2](https://github.com/electron/windows-installer/issues/167): 패키지 이름, 설명 등에 `-` 혹은 띄어쓰기 들어가면 에러남 
+	+ [Path 설정](https://stackoverflow.com/questions/57750620/how-to-fix-error-spawnsync-powershell-exe-enoent): window > 시스템 > 고급 설정 > Path > `%SystemRoot%\system32\WindowsPowerShell\v1.0` 추가하기 
+	 + [특이 사항3](https://github.com/electron/windows-installer/issues/167): 코드 경로에 영어가 아닌 다른 문자가 없어야 함 `ex) C:/다운로드/code/...`  
 	+ window 아닌 환경에서 필요한 Lib  wine-stable, mono (리눅스 환경이 없어 테스트 못한 상황)
 		+ wine-stable 다운로드 `brew install --cask wine-stable`
 		+ mono 다운로드 https://www.mono-project.com/download/stable/
